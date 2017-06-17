@@ -1,4 +1,3 @@
-const errorElement = document.querySelector('#errorMsg');
 const video = document.querySelector('video');
 
 const constraints = window.constraints = {
