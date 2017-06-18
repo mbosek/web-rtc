@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="description" content="WebRTC code samples">
   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
-
+  <link rel="stylesheet" href="style.css" />
   <title>Web RTC</title>
 </head>
 
@@ -13,6 +13,16 @@
   <video autoplay></video>
 
   <button>Take snapshot</button>
+
+  <label for="select">Filter: </label>
+    <select id="filter">
+      <option value="none">None</option>
+      <option value="blur">Blur</option>
+      <option value="grayscale">Grayscale</option>
+      <option value="invert">Invert</option>
+      <option value="sepia">Sepia</option>
+    </select>
+
   <canvas></canvas>
 
   <script src="index.js"></script>

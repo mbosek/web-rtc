@@ -1,6 +1,7 @@
 const video = document.querySelector('video');
 const canvas = window.canvas = document.querySelector('canvas');
 const button = document.querySelector('button');
+const filterSelect = document.querySelector('select#filter');
 
 canvas.width = 480;
 canvas.height = 360;
@@ -11,9 +12,12 @@ const constraints = window.constraints = {
 };
 
 button.onclick = () => {
-  canvas.width = video.videoWidth;
-  canvas.height = video.videoHeight;
+  canvas.className = filterSelect.value;
   canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+};
+
+filterSelect.onchange = () => {
+  video.className = filterSelect.value;
 };
 
 function handleSuccess(stream) {
