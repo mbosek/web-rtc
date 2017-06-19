@@ -26,4 +26,18 @@ function handleSuccess(stream) {
   video.srcObject = stream;
 }
 
+function sendData() {
+  let data = dataChannelSend.value;
+  sendChannel.send(data);
+}
+
+function onIceCandidate(pc, event) {
+  getOtherPc(pc)
+  .addIceCandidate(event.candidate)
+  .then(
+    () => onAddIceCandidateSuccess(pc),
+    err => onAddIceCandidateError(pc, err)
+  );
+}
+
 navigator.mediaDevices.getUserMedia(constraints).then(handleSuccess);
