@@ -20,7 +20,6 @@ function createConnection() {
   remoteConnection.ondatachannel = receiveChannelCallback;
 
   localConnection.createOffer().then(gotDescription1, onCreateSessionDescriptionError);
-
   startButton.disabled = true;
   closeButton.disabled = false;
 }
